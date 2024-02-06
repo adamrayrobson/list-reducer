@@ -1,4 +1,4 @@
-import { ACTION } from './actions';
+import { ACTION } from './postActions';
 
 export const initialState = () => {
   return {
