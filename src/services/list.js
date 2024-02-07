@@ -2,14 +2,14 @@ import { client, checkError } from './client'
 
 export async function getItems() {
   const res = await client
-    .from('posts')
+    .from('list')
     .select('*')
   return checkError(res)
 }
 
 export async function getItem(id) {
   const res = await client
-    .from('posts')
+    .from('list')
     .select('*')
     .match({ 'id': id })
     .single()
@@ -18,14 +18,14 @@ export async function getItem(id) {
 
 export async function createItem(data) {
   const res = await client
-    .from('posts')
+    .from('list')
     .insert(data)
   return checkError(res)
 }
 
 export async function updateItem(id, data) {
   const res = await client
-    .from('posts')
+    .from('list')
     .update({ ...data })
     .match({ 'id': id })
     .single()
@@ -34,7 +34,7 @@ export async function updateItem(id, data) {
 
 export async function deleteItem(id) {
   const res = await client
-    .from('posts')
+    .from('list')
     .delete()
     .eq('id', id)
   return checkError(res)

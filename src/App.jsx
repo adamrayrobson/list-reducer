@@ -3,9 +3,9 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Layout from '.Layout';
-import Page from './Page';
-import NotFound from './NotFound'
+import Layout from './components/Layout';
+import Page from './components/Page';
+import NotFound from './components/NotFound'
 
 export default function App() {
   return (
