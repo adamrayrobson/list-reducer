@@ -2,21 +2,19 @@ import {
   LOAD_START_ACTION,
   LOAD_SUCCESS_ACTION,
   LOAD_ERROR_ACTION,
-  ITEM_CHECKED_ACTION,
+  ITEM_COMPLETED_ACTION,
   TEXT_CHANGE_ACTION,
   QUANTITY_CHANGE_ACTION,
   SUBMIT_FORM_ACTION
 } from './listActions';
 
-export const initialState = () => {
-  return {
+export const initialState = {
     list: [],
     text: '',
-    quantity: Number(0),
+    quantity: 0,
     completed: false,
     loading: false,
     error: null
-  };
 };
 
 export function listReducer(state, action) {
@@ -37,14 +35,14 @@ export function listReducer(state, action) {
         loading: false,
         error: action.error,
       };
-    case ITEM_CHECKED_ACTION:
+    case ITEM_COMPLETED_ACTION:
       return {
         ...state,
         list: state.list.map(item => {
           if (item.id === action.id) {
             return {
               ...item,
-              completed: action.checked
+              completed: action.completed
             };
           }
           return item;
@@ -73,7 +71,7 @@ export function listReducer(state, action) {
           }
         ],
         text: '',
-        quantity: Number(0)
+        quantity: 0
       };
     default:
       console.error(`${action.type} is not supported`)

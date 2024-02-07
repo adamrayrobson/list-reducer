@@ -6,9 +6,9 @@ export default function Header() {
       <h1>This is List</h1>
       <nav>
         <ul className="header-list">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/create">Create</Link></li>
-          <li><Link href="/posts">Posts</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/create">Create</Link></li>
+          <li><Link to="/posts">Posts</Link></li>
         </ul>
       </nav>
     </header>
